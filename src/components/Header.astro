@@ -1,0 +1,57 @@
+---
+import Email from "@/icons/email.astro";
+import Package from "@/icons/package.astro";
+import Section from "@/layouts/Section.astro";
+---
+
+<Section
+  class="sticky top-0 bg-white/60 shadow-lg backdrop-blur-xl transition-transform"
+  id="header"
+>
+  <header class="flex h-16 items-center justify-between px-2">
+    <img class="w-36 cursor-pointer hover:brightness-90" src="/logo.svg" />
+
+    <div class="mt-1 flex gap-1.5 xs:gap-2">
+      <a
+        class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90 xs:px-3 xs:py-1.5"
+        href="mailto:yanoirsocks.spain@gmail.com"
+        ><span class="hidden xs:block">Email</span><Email
+          class="w-5 fill-white text-white"
+        /></a
+      >
+
+      <a
+        class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90 xs:px-3 xs:py-1.5"
+        href="https://link.microstore.app/p/yanoir"
+        target="_blank"
+        ><span class="hidden xs:block">Store</span><Package
+          class="w-5 fill-white text-white"
+        /></a
+      >
+    </div>
+  </header>
+</Section>
+
+<script>
+  /**
+   * Header behavior. When scrolling down, the header
+   * will hide. When scrolling up, the header will appear.
+   */
+
+  let lastScroll = 0;
+
+  const header = document.getElementById("section header");
+
+  window.addEventListener("scroll", function () {
+    let currentScroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (currentScroll >= lastScroll) {
+      lastScroll = currentScroll;
+      header?.classList.add("-translate-y-20");
+    } else {
+      lastScroll = currentScroll;
+      header?.classList.remove("-translate-y-20");
+    }
+  });
+</script>
