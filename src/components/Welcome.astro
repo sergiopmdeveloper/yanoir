@@ -5,7 +5,7 @@ import Section from "@/layouts/Section.astro";
 
 <Section id="welcome">
   <div
-    class="flex h-[calc(100vh-4rem)] flex-col items-center justify-center gap-10"
+    class="relative flex h-[calc(100vh-4rem)] flex-col items-center justify-center gap-10"
   >
     <div class="flex flex-col items-center">
       <h1
@@ -26,6 +26,17 @@ import Section from "@/layouts/Section.astro";
 
     <DownArrow
       class="w-12 cursor-pointer fill-theme-green hover:brightness-90 xs:w-14"
+    />
+
+    <img
+      class="animate-float absolute right-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      src="/socks/sock_1.png"
+      style="animation-delay: 0.5s;"
+    />
+
+    <img
+      class="animate-float absolute left-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      src="/socks/sock_2.png"
     />
   </div>
 </Section>
