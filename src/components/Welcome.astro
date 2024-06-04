@@ -10,15 +10,22 @@ import Section from "@/layouts/Section.astro";
     <div class="flex flex-col items-center">
       <h1
         class="text-6xl font-bold text-theme-red xs:text-7xl md:text-8xl xl:text-9xl"
+        id="welcome-title"
       >
         YANOIR
       </h1>
-      <h2 class="text-lg font-bold xs:text-xl md:text-2xl xl:text-3xl">
+      <h2
+        class="text-lg font-bold xs:text-xl md:text-2xl xl:text-3xl"
+        id="welcome-subtitle"
+      >
         The real cotton socks 🧦
       </h2>
     </div>
 
-    <p class="max-w-[60rem] text-center text-lg xs:text-xl">
+    <p
+      class="max-w-[60rem] text-center text-lg xs:text-xl"
+      id="welcome-description"
+    >
       Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos
       de texto. Lorem Ipsum ha sido el texto de relleno estándar de las
       industrias desde el año 1500 🍃
@@ -26,17 +33,73 @@ import Section from "@/layouts/Section.astro";
 
     <DownArrow
       class="w-12 cursor-pointer fill-theme-green hover:brightness-90 xs:w-14"
+      id="welcome-down-arrow"
     />
 
     <img
       class="animate-float absolute right-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      id="welcome-sock-1"
       src="/socks/sock_1.png"
       style="animation-delay: 0.5s;"
     />
 
     <img
       class="animate-float absolute left-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      id="welcome-sock-2"
       src="/socks/sock_2.png"
     />
   </div>
 </Section>
+
+<script>
+  import gsap from "gsap";
+
+  const welcomeTitle = document.getElementById("welcome-title");
+  const welcomeSubtitle = document.getElementById("welcome-subtitle");
+  const welcomeDescription = document.getElementById("welcome-description");
+  const welcomeDownArrow = document.getElementById("welcome-down-arrow");
+  const welcomeSock1 = document.getElementById("welcome-sock-1");
+  const welcomeSock2 = document.getElementById("welcome-sock-2");
+
+  gsap.from(welcomeTitle, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.6,
+  });
+
+  gsap.from(welcomeSubtitle, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.7,
+  });
+
+  gsap.from(welcomeDescription, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.8,
+  });
+
+  gsap.from(welcomeDownArrow, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.9,
+  });
+
+  if (welcomeSock1 && welcomeSock2) {
+    gsap.from(welcomeSock1, {
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+    });
+
+    gsap.from(welcomeSock2, {
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+    });
+  }
+</script>
