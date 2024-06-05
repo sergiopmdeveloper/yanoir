@@ -10,7 +10,7 @@ const { class: classname, id } = Astro.props;
 ---
 
 <div
-  class={cn("w-full", {
+  class={cn("w-full px-4", {
     [classname as string]: classname,
   })}
   id=`section ${id}`

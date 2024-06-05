@@ -1,15 +1,19 @@
 ---
-import Email from "@/icons/email.astro";
-import Package from "@/icons/package.astro";
+import Email from "@/icons/Email.astro";
+import Package from "@/icons/Package.astro";
 import Section from "@/layouts/Section.astro";
 ---
 
 <Section
-  class="sticky top-0 bg-white/60 shadow-lg backdrop-blur-xl transition-transform"
+  class="sticky top-0 z-50 bg-white/60 shadow-lg backdrop-blur-xl transition-transform"
   id="header"
 >
-  <header class="flex h-16 items-center justify-between px-2">
-    <img class="w-36 cursor-pointer hover:brightness-90" src="/logo.svg" />
+  <header class="flex h-16 items-center justify-between">
+    <img
+      class="w-36 cursor-pointer hover:brightness-90"
+      id="logo"
+      src="/logo.svg"
+    />
 
     <div class="mt-1 flex gap-1.5 xs:gap-2">
       <a
@@ -34,13 +38,25 @@ import Section from "@/layouts/Section.astro";
 
 <script>
   /**
+   * Add entrance animation to the header.
+   */
+
+  import gsap from "gsap";
+
+  const header = document.getElementById("section header");
+
+  gsap.from(header, {
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+  });
+
+  /**
    * Header behavior. When scrolling down, the header
    * will hide. When scrolling up, the header will appear.
    */
 
   let lastScroll = 0;
-
-  const header = document.getElementById("section header");
 
   window.addEventListener("scroll", function () {
     let currentScroll =
