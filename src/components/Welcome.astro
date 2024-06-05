@@ -26,9 +26,15 @@ import Section from "@/layouts/Section.astro";
       class="max-w-[60rem] text-center text-lg xs:text-xl"
       id="welcome-description"
     >
-      Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos
-      de texto. Lorem Ipsum ha sido el texto de relleno estándar de las
-      industrias desde el año 1500 🍃
+      <span class="font-bold text-theme-green">Yanoir</span> es una empresa especializada
+      en la fabricación de <span class="font-bold text-theme-green"
+        >calcetines de algodón</span
+      > para el mercado <span class="font-bold text-theme-green">B2B</span> 📦 Nos
+      dedicamos a ofrecer productos de <span class="font-bold text-theme-green"
+        >alta calidad</span
+      > que cumplen con los estándares más <span
+        class="font-bold text-theme-green">exigentes</span
+      > de la industria desde el primer día 🍃
     </p>
 
     <DownArrow
@@ -37,14 +43,14 @@ import Section from "@/layouts/Section.astro";
     />
 
     <img
-      class="animate-float absolute right-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      class="animate-float absolute right-[12%] top-[18%] -z-10 hidden w-28 lg:block xl:w-32"
       id="welcome-sock-1"
       src="/socks/sock_1.png"
       style="animation-delay: 0.5s;"
     />
 
     <img
-      class="animate-float absolute left-[12%] top-40 -z-10 hidden w-28 lg:block xl:w-32"
+      class="animate-float absolute left-[12%] top-[18%] -z-10 hidden w-28 lg:block xl:w-32"
       id="welcome-sock-2"
       src="/socks/sock_2.png"
     />
@@ -89,17 +95,15 @@ import Section from "@/layouts/Section.astro";
     delay: 0.9,
   });
 
-  if (welcomeSock1 && welcomeSock2) {
-    gsap.from(welcomeSock1, {
-      opacity: 0,
-      duration: 1,
-      delay: 1,
-    });
+  gsap.from(welcomeSock1, {
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+  });
 
-    gsap.from(welcomeSock2, {
-      opacity: 0,
-      duration: 1,
-      delay: 1,
-    });
-  }
+  gsap.from(welcomeSock2, {
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+  });
 </script>
