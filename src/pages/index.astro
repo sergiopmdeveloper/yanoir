@@ -4,7 +4,10 @@ import Welcome from "@/components/Welcome.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout description="Home page">
+<Layout
+  description="Home page"
+  priorityImages={["/socks/sock_1.png", "/socks/sock_2.png"]}
+>
   <main>
     <Header />
     <Welcome />

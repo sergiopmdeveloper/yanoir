@@ -1,9 +1,10 @@
 ---
 interface Props {
   description: string;
+  priorityImages?: string[];
 }
 
-const { description } = Astro.props;
+const { description, priorityImages } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,6 +16,11 @@ const { description } = Astro.props;
     <meta name="description" content={description} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {
+      priorityImages?.map((image) => (
+        <link rel="preload" as="image" href={image} />
+      ))
+    }
 
     <title>Yanoir</title>
   </head>

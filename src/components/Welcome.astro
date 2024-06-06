@@ -43,14 +43,14 @@ import Section from "@/layouts/Section.astro";
     />
 
     <img
-      class="animate-float absolute right-[12%] top-[18%] -z-10 hidden w-28 lg:block xl:w-32"
+      class="absolute right-[12%] top-[18%] -z-10 hidden w-28 animate-float lg:block xl:w-32"
       id="welcome-sock-1"
       src="/socks/sock_1.png"
       style="animation-delay: 0.5s;"
     />
 
     <img
-      class="animate-float absolute left-[12%] top-[18%] -z-10 hidden w-28 lg:block xl:w-32"
+      class="absolute left-[12%] top-[18%] -z-10 hidden w-28 animate-float lg:block xl:w-32"
       id="welcome-sock-2"
       src="/socks/sock_2.png"
     />
@@ -95,15 +95,17 @@ import Section from "@/layouts/Section.astro";
     delay: 0.9,
   });
 
-  gsap.from(welcomeSock1, {
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-  });
+  if (welcomeSock1 && welcomeSock2) {
+    gsap.from(welcomeSock1, {
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+    });
 
-  gsap.from(welcomeSock2, {
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-  });
+    gsap.from(welcomeSock2, {
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+    });
+  }
 </script>
