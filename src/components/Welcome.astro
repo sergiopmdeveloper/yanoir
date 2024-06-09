@@ -38,7 +38,7 @@ import Section from "@/layouts/Section.astro";
       > de la industria desde el primer día 🍃
     </p>
 
-    <div class="flex gap-2">
+    <div class="flex gap-2" id="welcome-buttons">
       <a
         href="https://wa.me/0034669386118"
         target="_blank"
@@ -92,7 +92,7 @@ import Section from "@/layouts/Section.astro";
   const welcomeTitle = document.getElementById("welcome-title");
   const welcomeSubtitle = document.getElementById("welcome-subtitle");
   const welcomeDescription = document.getElementById("welcome-description");
-  // TODO Implement phone and Instagram animations
+  const welcomeButtons = document.getElementById("welcome-buttons");
   const welcomeSock1 = document.getElementById("welcome-sock-1");
   const welcomeSock2 = document.getElementById("welcome-sock-2");
 
@@ -115,6 +115,13 @@ import Section from "@/layouts/Section.astro";
     y: -50,
     duration: 1,
     delay: 0.8,
+  });
+
+  gsap.from(welcomeButtons, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.9,
   });
 
   gsap.from(welcomeSock1, {
