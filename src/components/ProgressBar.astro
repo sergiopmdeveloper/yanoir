@@ -1,14 +1,23 @@
 <div class="progress-bar bg-theme-green fixed top-0 h-1"></div>
 
 <script>
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    const progressBar = document.querySelector(".progress-bar") as HTMLDivElement;
+  /**
+   * Add progress bar functionality.
+   */
 
-    ScrollTrigger.create({
-        start: 'top top',
-        end: 'bottom bottom',
-        onUpdate: (self) => {
-            progressBar.style.width = (self.progress * 100) + "%";
-        }
-    });
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  /**
+   * Progress bar will start at the top of the document
+   * and will end at the end of the document
+   */
+  const progressBar = document.querySelector(".progress-bar") as HTMLDivElement;
+
+  ScrollTrigger.create({
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: (self) => {
+        progressBar.style.width = `${self.progress * 100}%`;
+    }
+  });
 </script>
