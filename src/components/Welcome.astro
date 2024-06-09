@@ -37,10 +37,26 @@ import Section from "@/layouts/Section.astro";
       > de la industria desde el primer día 🍃
     </p>
 
-    <DownArrow
-      class="w-12 cursor-pointer fill-theme-green hover:brightness-90 xs:w-14"
-      id="welcome-down-arrow"
-    />
+    <div class="flex gap-2">
+      <a
+        href="https://wa.me/0034669386118"
+        target="_blank"
+        aria-label="Abre una conversación de WhatsApp"
+        ><button
+          class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90"
+          >Teléfono</button
+        ></a
+      >
+      <a
+        href="https://www.instagram.com/yanoir.official/"
+        target="_blank"
+        aria-label="Abre la página de Instagram"
+        ><button
+          class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90"
+          >Instagram</button
+        ></a
+      >
+    </div>
 
     <img
       class="absolute right-[12%] top-[18%] -z-10 hidden w-28 animate-float lg:block xl:w-32"
@@ -69,7 +85,7 @@ import Section from "@/layouts/Section.astro";
   const welcomeTitle = document.getElementById("welcome-title");
   const welcomeSubtitle = document.getElementById("welcome-subtitle");
   const welcomeDescription = document.getElementById("welcome-description");
-  const welcomeDownArrow = document.getElementById("welcome-down-arrow");
+  // TODO Implement phone and Instagram animations
   const welcomeSock1 = document.getElementById("welcome-sock-1");
   const welcomeSock2 = document.getElementById("welcome-sock-2");
 
@@ -92,13 +108,6 @@ import Section from "@/layouts/Section.astro";
     y: -50,
     duration: 1,
     delay: 0.8,
-  });
-
-  gsap.from(welcomeDownArrow, {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    delay: 0.9,
   });
 
   gsap.from(welcomeSock1, {
