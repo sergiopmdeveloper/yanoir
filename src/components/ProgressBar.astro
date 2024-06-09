@@ -1,0 +1,14 @@
+<div class="progress-bar bg-theme-green fixed top-0 left-0 h-1 w-0 z-[1000]"></div>
+
+<script>
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    const progressBar = document.querySelector(".progress-bar") as HTMLDivElement;
+
+    ScrollTrigger.create({
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: (self) => {
+            progressBar.style.width = (self.progress * 100) + "%";
+        }
+    });
+</script>
