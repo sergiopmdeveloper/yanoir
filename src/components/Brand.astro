@@ -1,0 +1,46 @@
+---
+import Section from "@/layouts/Section.astro";
+---
+
+<Section class="bg-theme-green py-20">
+  <p class="text-5xl font-bold leading-snug" id="brand">
+    Calcetines de algodón de alta calidad, perfectos para cualquier ocasión y
+    estilo. Ideales para todo tipo de situaciones, desde lo cotidiano hasta
+    eventos especiales.
+  </p>
+</Section>
+
+<div class="h-screen"></div>
+
+<script>
+  /**
+   * Reveal text with full opacity on scroll
+   */
+
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitType from "split-type";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const brandText = document.getElementById("brand");
+
+  const brandTextSplit = new SplitType(
+    document.getElementById("brand") as HTMLElement,
+    {
+      types: "chars,words",
+    }
+  );
+
+  gsap.from(brandTextSplit.chars, {
+    scrollTrigger: {
+      trigger: brandText,
+      start: "top 80%",
+      end: "bottom 30%",
+      scrub: true,
+      markers: false,
+    },
+    opacity: 0.2,
+    stagger: 0.1,
+  });
+</script>
