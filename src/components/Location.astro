@@ -2,7 +2,7 @@
 import Section from "@/layouts/Section.astro";
 ---
 
-<Section class="mt-40" id="google-maps-location">
+<Section class="mb-10 mt-40" id="google-maps-location">
   <h1 class="mb-5 text-3xl font-bold text-theme-red xs:mb-8 xs:text-5xl">
     Dónde estamos
   </h1>
@@ -26,7 +26,7 @@ import Section from "@/layouts/Section.astro";
   gsap.registerPlugin(ScrollTrigger);
 
   const googleMapsLocation = document.getElementById(
-    "section google-maps-location"
+    "section google-maps-location",
   );
 
   gsap.from(googleMapsLocation, {
