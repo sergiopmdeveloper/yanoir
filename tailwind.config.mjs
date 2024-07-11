@@ -7,6 +7,7 @@ export default {
         "theme-green": "#98C173",
         "theme-red": "#DA2528",
         "theme-black": "#000000",
+        "theme-black-greenish": "#1A1F1C",
       },
       screens: {
         xs: "480px",
