@@ -1,0 +1,44 @@
+<div class="mt-40 flex gap-10 overflow-x-hidden" id="repeated-socks">
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_3.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_4.webp" alt="Sock" />
+  <img class="w-28" src="/socks/sock_5.webp" alt="Sock" />
+</div>
+
+<script>
+  /**
+   * Scroll the repeated socks horizontally
+   * when scrolling the page
+   */
+
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const repeatedSocks = document.getElementById(
+    "repeated-socks"
+  ) as HTMLDivElement;
+
+  ScrollTrigger.create({
+    trigger: repeatedSocks,
+    start: "top bottom",
+    onUpdate: (self) => {
+      repeatedSocks.scrollLeft += self.direction * 3;
+    },
+  });
+</script>
