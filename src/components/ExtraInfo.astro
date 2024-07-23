@@ -1,0 +1,50 @@
+---
+import Chart from "@/icons/Chart.astro";
+import Pencil from "@/icons/Pencil.astro";
+import Thunder from "@/icons/Thunder.astro";
+import Section from "@/layouts/Section.astro";
+---
+
+<Section class="mt-40 bg-theme-black py-16">
+  <div class="container flex flex-col gap-8">
+    <h2 class="text-center text-5xl font-bold text-white">¿Quiénes somos?</h2>
+    <p class="text-center text-lg text-white">
+      Yanoir es una empresa fundada en el año 2004. Somos una empresa española
+      con un toque asiático. Nuestra misión es ofrecer calcetines de alto
+      estanding para todo tipo de público con un toque de elegancia, y sobre
+      todo, transmitir confianza a nuestros clientes desde el primer día.
+    </p>
+    <div class="flex flex-wrap gap-5">
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[30rem]"
+      >
+        <Chart class="w-10 fill-theme-green" />
+        <h3 class="text-3xl font-bold text-white">Rendimiento</h3>
+        <p class="text-white">
+          Observa los resultados obtenidos gracias a la venta de nuestros
+          calcetines de alta calidad.
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[30rem]"
+      >
+        <Thunder class="w-10 fill-theme-green" />
+        <h3 class="text-3xl font-bold text-white">Rapidez</h3>
+        <p class="text-white">
+          Ten a tu disposición una amplia gama de productos en un tiempo récord
+          y ponlos a la venta lo antes posible.
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[30rem]"
+      >
+        <Pencil class="w-10 fill-theme-green" />
+        <h3 class="text-3xl font-bold text-white">Personalización</h3>
+        <p class="text-white">
+          Obtén la posibilidad de personalizar tus calcetines con tu propio
+          diseño y marca para que se ajusten a tus necesidades.
+        </p>
+      </div>
+    </div>
+  </div>
+</Section>

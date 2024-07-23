@@ -1,25 +1,25 @@
 ---
 import Brand from "@/components/Brand.astro";
+import ExtraInfo from "@/components/ExtraInfo.astro";
+import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import Location from "@/components/Location.astro";
 import ProgressBar from "@/components/ProgressBar.astro";
 import Welcome from "@/components/Welcome.astro";
 import Layout from "@/layouts/Layout.astro";
-import Footer from "@/components/Footer.astro";
 ---
 
 <Layout
   description="Home page"
   priorityImages={["/socks/sock_1.webp", "/socks/sock_2.webp"]}
 >
-
-<main>
+  <main>
     <ProgressBar />
     <Header />
     <Welcome />
     <Brand />
+    <ExtraInfo />
     <Location />
     <Footer />
   </main>
-
 </Layout>
