@@ -1,0 +1,51 @@
+---
+import Chart from "@/icons/Chart.astro";
+import Pencil from "@/icons/Pencil.astro";
+import Thunder from "@/icons/Thunder.astro";
+import Section from "@/layouts/Section.astro";
+---
+
+<Section class="mt-40 bg-theme-black py-16">
+  <div class="container flex flex-col gap-8">
+    <h2 class="text-4xl font-bold text-white sm:text-center sm:text-5xl">
+      Who we are
+    </h2>
+    <p class="text-white sm:text-center sm:text-lg">
+      Yanoir is a company founded in 2004. We are a Spanish company with an
+      Asian flair. Our mission is to offer high-standard socks for all audiences
+      with a touch of elegance, and above all, to convey confidence to our
+      customers from day one.
+    </p>
+    <div class="mx-auto flex flex-wrap gap-5">
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[25rem]"
+      >
+        <Chart class="w-10 fill-theme-green" />
+        <h3 class="text-2xl font-bold text-white sm:text-3xl">Performance</h3>
+        <p class="text-sm text-white sm:text-base">
+          See the results achieved through the sale of our high-quality socks.
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[25rem]"
+      >
+        <Thunder class="w-10 fill-theme-green" />
+        <h3 class="text-2xl font-bold text-white sm:text-3xl">Speed</h3>
+        <p class="text-sm text-white sm:text-base">
+          Access a wide range of products in record time and get them on sale as
+          quickly as possible.
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-col gap-5 border border-white p-5 lg:w-[25rem]"
+      >
+        <Pencil class="w-10 fill-theme-green" />
+        <h3 class="text-2xl font-bold text-white sm:text-3xl">Customization</h3>
+        <p class="text-sm text-white sm:text-base">
+          Get the option to personalize your socks with your own design and
+          branding to suit your needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</Section>
