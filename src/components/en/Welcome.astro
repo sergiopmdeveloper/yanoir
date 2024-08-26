@@ -1,0 +1,136 @@
+---
+import Instagram from "@/icons/Instagram.astro";
+import Telephone from "@/icons/Telephone.astro";
+import Section from "@/layouts/Section.astro";
+---
+
+<Section id="welcome">
+  <div
+    class="relative mt-16 flex h-[calc(100vh-4rem)] flex-col items-center justify-center gap-10"
+  >
+    <div class="flex flex-col items-center">
+      <h1
+        class="text-6xl font-bold text-theme-red xs:text-7xl md:text-8xl xl:text-9xl"
+        id="welcome-title"
+      >
+        YANOIR
+      </h1>
+      <h2
+        class="text-lg font-bold xs:text-xl md:text-2xl xl:text-3xl"
+        id="welcome-subtitle"
+      >
+        The real cotton socks 🧦
+      </h2>
+    </div>
+
+    <p
+      class="max-w-[60rem] text-center text-lg xs:text-xl"
+      id="welcome-description"
+    >
+      <span class="font-bold text-theme-green">Yanoir</span> is a company specialized
+      in manufacturing <span class="font-bold text-theme-green">socks</span> for
+      the <span class="font-bold text-theme-green">B2B</span> market 📦 From casual
+      to formal, we are dedicated to offering high-quality products that meet the
+      industry's <span class="font-bold text-theme-green"
+        >most demanding standards</span
+      > from day one 🍃
+    </p>
+
+    <div class="flex gap-2" id="welcome-buttons">
+      <a
+        href="https://wa.me/34613212443"
+        target="_blank"
+        aria-label="Abre una conversación de WhatsApp"
+      >
+        <button
+          class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90"
+        >
+          <span class="hidden xs:block">WhatsApp</span>
+          <Telephone class="w-7 fill-white text-white xs:w-5" /></button
+        >
+      </a>
+      <a
+        href="https://www.instagram.com/yanoir.official/"
+        target="_blank"
+        aria-label="Abre la página de Instagram"
+      >
+        <button
+          class="flex items-center gap-2 rounded-xl bg-theme-green px-2.5 py-2 text-lg font-semibold text-white hover:brightness-90"
+        >
+          <span class="hidden xs:block">Instagram</span>
+          <Instagram class="w-7 fill-white text-white xs:w-5" /></button
+        >
+      </a>
+    </div>
+
+    <img
+      class="absolute right-[12%] top-[18%] -z-10 hidden w-28 animate-float lg:block xl:w-32"
+      id="welcome-sock-1"
+      src="/socks/sock_1.webp"
+      style="animation-delay: 0.5s;"
+      alt="Sock"
+    />
+
+    <img
+      class="absolute left-[12%] top-[18%] -z-10 hidden w-28 animate-float lg:block xl:w-32"
+      id="welcome-sock-2"
+      src="/socks/sock_2.webp"
+      alt="Sock"
+    />
+  </div>
+</Section>
+
+<script>
+  /**
+   * Add entrance animations to the welcome section
+   */
+
+  import gsap from "gsap";
+
+  const welcomeTitle = document.getElementById("welcome-title");
+  const welcomeSubtitle = document.getElementById("welcome-subtitle");
+  const welcomeDescription = document.getElementById("welcome-description");
+  const welcomeButtons = document.getElementById("welcome-buttons");
+  const welcomeSock1 = document.getElementById("welcome-sock-1");
+  const welcomeSock2 = document.getElementById("welcome-sock-2");
+
+  gsap.from(welcomeTitle, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.6,
+  });
+
+  gsap.from(welcomeSubtitle, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.7,
+  });
+
+  gsap.from(welcomeDescription, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.8,
+  });
+
+  gsap.from(welcomeButtons, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.9,
+  });
+
+  gsap.from(welcomeSock1, {
+    opacity: 0,
+    duration: 2,
+    ease: "expo.in",
+  });
+
+  gsap.from(welcomeSock2, {
+    opacity: 0,
+    duration: 2,
+    ease: "expo.in",
+  });
+</script>

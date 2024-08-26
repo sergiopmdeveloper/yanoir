@@ -1,0 +1,18 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<div class="fixed bottom-0 right-0 flex space-x-2 p-4">
+  <button
+    class={`rounded-full p-2 ${currentPath === "/" ? "bg-theme-green text-white" : "bg-gray-200"}`}
+    onclick="window.location.href = '/';"
+  >
+    ES
+  </button>
+  <button
+    class={`rounded-full p-2 ${currentPath === "/en" ? "bg-theme-green text-white" : "bg-gray-200"}`}
+    onclick="window.location.href = '/en';"
+  >
+    EN
+  </button>
+</div>

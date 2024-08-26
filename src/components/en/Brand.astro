@@ -1,0 +1,46 @@
+---
+import Section from "@/layouts/Section.astro";
+---
+
+<Section class="bg-theme-green py-16 sm:py-20">
+  <p
+    class="text-2xl font-bold leading-snug xs:text-3xl xs:leading-snug sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-snug"
+    id="brand"
+  >
+    Premium, high-quality socks, perfect for any occasion and style. Ideal for
+    all types of situations, from everyday wear to special events.
+  </p>
+</Section>
+
+<script>
+  /**
+   * Reveal text with full opacity on scroll
+   */
+
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitType from "split-type";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const brandText = document.getElementById("brand");
+
+  const brandTextSplit = new SplitType(
+    document.getElementById("brand") as HTMLElement,
+    {
+      types: "chars,words",
+    }
+  );
+
+  gsap.from(brandTextSplit.chars, {
+    scrollTrigger: {
+      trigger: brandText,
+      start: "top 80%",
+      end: "bottom 30%",
+      scrub: true,
+      markers: false,
+    },
+    opacity: 0.2,
+    stagger: 0.1,
+  });
+</script>
